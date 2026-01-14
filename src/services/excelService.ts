@@ -1,5 +1,5 @@
 import * as XLSX from 'xlsx';
-import type { Aisp, City, Unit, RawUnit, RawAispResponsable, RawBuilding, RawFleet } from '../types';
+import type { Aisp, Unit, RawUnit, RawAispResponsable, RawBuilding, RawFleet } from '../types';
 
 const FILE_PATH = '/base de dados/Dados gerais.xlsx';
 
@@ -143,6 +143,12 @@ export const fetchAndParseData = async (): Promise<Aisp[]> => {
         });
 
         const sortedAisps = Array.from(aispMap.values());
+
+        // Sort Cities within each AISP alphabetically
+        sortedAisps.forEach(aisp => {
+            aisp.cities.sort((a, b) => a.name.localeCompare(b.name));
+        });
+
         return sortedAisps;
 
     } catch (error) {

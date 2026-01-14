@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Unit } from '../types';
-import { X, Car, CircleDot } from 'lucide-react';
+import { X, Car } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface UnitDetailsDrawerProps {

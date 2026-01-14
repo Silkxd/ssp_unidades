@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  --color-pm: #3b82f6;
+  --color-pc: #ef4444;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+}

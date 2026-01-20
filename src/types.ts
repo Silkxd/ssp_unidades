@@ -26,6 +26,7 @@ export interface Unit {
     aisp: string;
     buildingId: string;
     fleet: Vehicle[];
+    people: Person[];
 }
 
 export interface Vehicle {
@@ -33,6 +34,13 @@ export interface Vehicle {
     model: string;
     plate: string;
     type: string;
+    unitId: string;
+}
+
+export interface Person {
+    id: string;
+    name: string;
+    role: string;
     unitId: string;
 }
 
@@ -50,7 +58,11 @@ export interface RawFleet {
     [key: string]: any;
 }
 
-
+export interface RawPessoa {
+    id_unidade: string;
+    ID_UNIDADE: string;
+    [key: string]: any;
+}
 
 export interface RawBuilding {
     PREDIO: string;

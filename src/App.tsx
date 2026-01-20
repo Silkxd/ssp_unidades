@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import type { Aisp, City, Building, Unit } from './types';
 import { fetchAndParseData } from './services/excelService';
 import { UnitDetailsDrawer } from './components/UnitDetailsDrawer';
-import { Map, ChevronRight, Building2, Car, IdCard } from 'lucide-react';
+import { Map, ChevronRight, Building2, Car, IdCard, Users } from 'lucide-react';
 import clsx from 'clsx';
 
 function App() {
@@ -230,6 +230,18 @@ function App() {
                         <div className="px-2.5 py-1 rounded bg-slate-50 text-slate-400 border border-slate-100 text-xs font-medium flex items-center gap-1.5">
                           <Car size={14} />
                           Sem frota
+                        </div>
+                      )}
+
+                      {unit.people.length > 0 ? (
+                        <div className="px-2.5 py-1 rounded bg-emerald-50 text-emerald-700 border border-emerald-100 text-xs font-medium flex items-center gap-1.5">
+                          <Users size={14} />
+                          {unit.people.length} Pessoas
+                        </div>
+                      ) : (
+                        <div className="px-2.5 py-1 rounded bg-slate-50 text-slate-400 border border-slate-100 text-xs font-medium flex items-center gap-1.5">
+                          <Users size={14} />
+                          Sem pessoas
                         </div>
                       )}
 
